@@ -1,0 +1,222 @@
+:root {
+    --rojo-principal: #d32f2f;
+    --amarillo-acento: #ffc107;
+    --gris-fondo: #f8f9fa;
+    --texto-oscuro: #2d3436;
+    --blanco: #ffffff;
+    --sombra-suave: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ATRIBUTOS UNIVERSALES */
+* {
+    margin:0;
+    padding:0;
+    font-family:calibri;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--gris-fondo);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+}
+
+/* ATRIBUTOS PARA DISEÑOS POR SECCIONES GENERALES */
+header{
+    background: var(--blanco);
+    box-shadow: var(--sombra-suave);
+    margin-bottom: 2rem;
+}
+
+/* ATRIBUTOS PARA LOGOTIPO */
+header .logotipo {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: var(--rojo-principal);
+    background-size: cover;
+    background-position: center;
+    color: var(--blanco);
+    height: 320px;
+    position: relative;
+}
+
+header .logotipo img {
+    width: 250px;            
+    max-width: 90%;       
+    height: auto;           
+    border-radius: 8px;     
+    border: 4px solid var(--blanco);
+    background-color: var(--blanco); 
+    padding: 8px;           
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+header .logotipo figcaption {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* ATRIBUTOS PARA EL NAVEGADOR DE LA PÁGINA */
+/* área de la lista general */
+nav {
+    background: var(--rojo-principal);
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+nav ul li {
+    flex: 1;
+    text-align: center;
+}
+
+/* área por enlaces */
+nav ul a {
+    display: block;
+    padding: 1rem;
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    border-bottom: 4px solid transparent; 
+    box-sizing: border-box;
+}
+
+nav ul a:hover {
+    background: rgba(255,255,255,0.1);
+    border-bottom: 4px solid var(--amarillo-acento);
+}
+
+/* ATRIBUTOS PARA LOS ARTÍCULOS */
+/* sección general */
+.main {
+    display: flex;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+article h3 {
+    color: var(--rojo-principal);
+    font-size: 1.2rem;
+    margin-top: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--amarillo-acento);
+    display: inline-block;
+}
+
+article h3 + p {
+    font-style: italic;
+    color: #555;
+    border-left: 3px solid var(--amarillo-acento);
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+/* sección individual por artículos */
+.articulos {
+    flex: 2;
+}
+
+article {
+    background: var(--blanco);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s;
+    overflow: hidden; /* para que no se desborde */
+}
+
+article:hover {
+    transform: translateY(-5px);
+}
+
+article h2 {
+    color: var(--rojo-principal);
+    margin-bottom: 1rem;
+    border-left: 5px solid var(--amarillo-acento);
+    padding-left: 10px;
+}
+
+article img {
+    width: 300px;            
+    height: auto;          
+    object-fit: cover;     
+    border-radius: 3%;    
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid var(--gris-fondo);
+    display: block;
+}
+
+/* ATRIBUTOS PARA EL ASIDE */
+aside {
+    flex: 1;
+    background: var(--amarillo-acento);
+    padding: 2rem;
+    border-radius: 12px;
+    height: fit-content;
+    box-shadow: var(--sombra-suave);
+}
+
+aside h3 {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+aside img {
+    width: 400px;           
+    height: auto;
+    object-fit: cover;
+    border-radius: 3%;
+    display: block;
+    margin: 1rem auto;     
+    border: 2px solid var(--blanco);
+}
+
+/* ATRIBUTOS PARA EL PIE DE PÁGINA */
+footer {
+    background: #222;
+    color: #bbb;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+    nav ul {
+        flex-wrap: wrap;
+    }
+    nav ul li {
+        min-width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+}

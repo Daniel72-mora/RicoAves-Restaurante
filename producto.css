@@ -1,0 +1,315 @@
+:root {
+    --rojo-principal: #d32f2f;
+    --amarillo-acento: #ffc107;
+    --gris-fondo: #f8f9fa;
+    --texto-oscuro: #2d3436;
+    --blanco: #ffffff;
+    --negro: #222222;
+    --sombra-suave: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--gris-fondo);
+    color: var(--texto-oscuro);
+}
+
+header{
+    background: var(--blanco);
+    box-shadow: var(--sombra-suave);
+    margin-bottom: 2rem;
+}
+
+/* LOGOTIPO */
+header .logotipo {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: var(--rojo-principal);
+    background-size: cover;
+    background-position: center;
+    color: var(--blanco);
+    height: 320px;
+    position: relative;
+}
+
+header .logotipo img {
+    width: 250px;            
+    max-width: 90%;       
+    height: auto;           
+    border-radius: 8px;     
+    border: 4px solid var(--blanco);
+    background-color: var(--blanco); 
+    padding: 8px;           
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+header .logotipo figcaption {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+nav {
+    background: var(--rojo-principal);
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+nav ul li {
+    flex: 1;
+    text-align: center;
+}
+
+/* área por enlaces */
+nav ul a {
+    display: block;
+    padding: 1rem;
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    border-bottom: 4px solid transparent; 
+    box-sizing: border-box;
+}
+
+nav ul a:hover {
+    background: rgba(255,255,255,0.1);
+    border-bottom: 4px solid var(--amarillo-acento);
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenedor-menu {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: var(--blanco);
+    border-radius: 20px;
+    box-shadow: var(--sombra-suave);
+}
+
+.titulo-principal {
+    text-align: center;
+    color: var(--rojo-principal);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+/* COMBOS */
+.parrilla-combos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* permite que la parte de los combos quede ordenado */
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.tarjeta-combo {
+    border: 2px solid var(--amarillo-acento);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--blanco);
+}
+
+.tarjeta-combo header, 
+.tarjeta-combo p, 
+.tarjeta-combo footer {
+    background-color: transparent !important;
+}
+
+.tarjeta-combo:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    background-color: #fffdf5 !important;
+}
+
+.etiqueta {
+    background: var(--rojo-principal);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.precio-destacado {
+    font-size: 1.8rem;
+    color: var(--rojo-principal);
+    font-weight: 800;
+    margin-top: 1rem;
+}
+
+/* CARTA DETALLADA */
+.carta-detallada {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    border-top: 3px solid var(--amarillo-acento);
+    padding-top: 2rem;
+}
+
+.columna-menu {
+    flex: 1;
+    min-width: 300px;
+}
+
+.columna-menu h2 {
+    color: var(--rojo-principal);
+    border-bottom: 3px solid var(--amarillo-acento);
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.lista-items {
+    list-style: none;
+}
+
+.lista-items li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed #ccc;
+}
+
+.lista-items li span {
+    color: var(--negro);
+    font-weight: 500;
+}
+
+.lista-items li strong {
+    color: var(--rojo-principal);
+}
+
+/* ALMUERZO */
+.cuadro-almuerzo {
+    background: #fff9e6;
+    border: 1px solid var(--amarillo-acento);
+    padding: 1.2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.cuadro-almuerzo:hover {
+    transform: scale(1.02);
+}
+
+.cuadro-almuerzo h3 {
+    color: var(--rojo-principal);
+    margin-bottom: 5px;
+}
+
+/* BEBIDAS */
+.seccion-bebidas h2 {
+    color: var(--rojo-principal);
+    border-bottom: 3px solid var(--amarillo-acento);
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.lista-bebidas-ordenada {
+    list-style: none;
+    max-width: 600px;
+    margin: 1.5rem auto;
+    padding: 0;
+}
+
+.lista-bebidas-ordenada li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px dashed #ccc;
+    transition: background 0.3s;
+}
+
+.lista-bebidas-ordenada li:hover {
+    background: #fdfdfd;
+}
+
+.lista-bebidas-ordenada li span {
+    font-weight: 500;
+    color: var(--negro);
+}
+
+.lista-bebidas-ordenada li strong {
+    color: var(--rojo-principal);
+    font-size: 1.1rem;
+}
+
+.final {
+    background: #222;
+    color: #bbb;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; 
+        padding: 0.5rem 0;
+    }
+    
+    nav ul li {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    header .logotipo figcaption {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedor-menu {
+        padding: 1rem;
+        margin: 1rem 0.5rem;
+        border-radius: 10px;
+    }
+
+    .titulo-principal {
+        font-size: 1.6rem;
+    }
+
+    .parrilla-combos {
+        grid-template-columns: 1fr; 
+        gap: 1rem;
+    }
+
+    .carta-detallada {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .tarjeta-combo h3 { font-size: 1.1rem; }
+    .precio-destacado { font-size: 1.4rem; }
+}
+
+@media (max-width: 350px) {
+    .lista-items li, .lista-bebidas-ordenada li {
+        font-size: 0.85rem;
+        padding: 8px 5px;
+    }
+}
