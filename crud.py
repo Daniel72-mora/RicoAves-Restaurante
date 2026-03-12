@@ -84,8 +84,9 @@ while True:
         nom = input("Nombre completo: ")
         tel = input("Teléfono: ")
         dir = input("Dirección: ")
+        mail = input("Correo: ")
         sql = "INSERT INTO clientes (nombre, telefono, direccion) VALUES (%s, %s, %s)"
-        ejecutar_query(sql, (nom, tel, dir))
+        ejecutar_query(sql, (nom, tel, dir, mail))
         print("✅ Cliente registrado.")
 
     # 3. REGISTRAR VENTA (PEDIDO)
