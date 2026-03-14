@@ -127,6 +127,27 @@ nav ul a:hover {
     flex-direction: column;
     justify-content: space-between;
     background-color: var(--blanco);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.tarjeta-combo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;      
+    height: 100%;      
+    object-fit: cover; 
+    opacity: 0;       
+    transition: opacity 0.5s ease; 
+    z-index: -1;      
+    pointer-events: none;
+}
+
+.tarjeta-combo:hover img {
+    opacity: 0.4;   
+    width: 100%;       
 }
 
 .tarjeta-combo header, 
